@@ -1,11 +1,15 @@
 import express from 'express'
-import sequelize from './config/database.js';
+import models from './models/index.js';
 import authRoutes from './routes/authRoutes.js'
+import quizRoutes from './routes/quizRoutes.js'
+
+const { sequelize } = models;
 
 const app = express();
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/api/auth', authRoutes)
+app.use('/api/quiz', quizRoutes)
 
 const startServer = async () => {
     try{
