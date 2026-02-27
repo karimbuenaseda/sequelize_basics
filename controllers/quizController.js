@@ -37,3 +37,42 @@ export const getQuizzes = async (req, res, next) => {
         res.status(500).json({ message: `Error fetching quizzes: ${error.message}` });
     }
 }
+
+export const deleteQuiz = async (req, res, next) => {
+    try{
+        const id = req.params.id;
+        const quiz = await Quiz.findByPk(id);
+        if (!quiz) {
+            return res.status(404).json({ message: 'Quiz not found' });
+        }
+        await quiz.destroy();
+        res.status(200).json({ message: 'Quiz deleted successfully!' });
+    }catch (error) {
+        console.error('Error deleting quiz:', error);
+        res.status(500).json({ message: `Error deleting quiz: ${error.message}` });
+    }
+}
+
+export const updateQuiz = async (req, res, next) => {
+    try {
+        const id = req.params.id;
+        const { title, description } = req.body;
+
+        const quiz = await Quiz.findByPk(id);
+        if(!quiz){
+            return res.status(404).json({message: 'Quiz not found'});
+        }
+
+        quiz.title = title || quiz.title;
+        quiz.description = description || quiz.description;
+        await quiz.save();
+
+        res.status(200).json({
+        message: 'Quiz updated successfully!',
+        })
+
+    }catch (error) {
+        console.error('Error updating quiz:', error);
+        res.status(500).json({ message: `Error updating quiz: ${error.message}` });
+    }
+}
