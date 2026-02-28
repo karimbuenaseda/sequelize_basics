@@ -9,6 +9,10 @@ const Option = sequelize.define("Option", {
     isCorrect: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
+    },
+    isActive: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true
     }
 })
 
