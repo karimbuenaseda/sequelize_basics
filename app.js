@@ -2,6 +2,7 @@ import express from 'express'
 import models from './models/index.js';
 import authRoutes from './routes/authRoutes.js'
 import quizRoutes from './routes/quizRoutes.js'
+import questionAndAnswerRoute from './routes/questionAndAnswerRoute.js'
 
 const { sequelize } = models;
 
@@ -10,6 +11,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 app.use('/api/auth', authRoutes)
 app.use('/api/quiz', quizRoutes)
+app.use('/api/qna', questionAndAnswerRoute)
 
 const startServer = async () => {
     try{
