@@ -9,6 +9,11 @@ export const Quiz = sequelize.define("Quiz", {
     description: {
         type: DataTypes.TEXT,
     },
+    number_of_questions: {
+        type: DataTypes.INTEGER,
+        defaultValue: 10,
+        allowNull: false
+    },
 })
 
 export const QuizType = sequelize.define("QuizType", {
