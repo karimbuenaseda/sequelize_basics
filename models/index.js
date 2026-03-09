@@ -1,6 +1,6 @@
 import sequelize from '../config/database.js';
 
-import { Quiz, QuizType } from './quiz.model.js';
+import { Quiz, QuizType, QuizScore } from './quiz.model.js';
 import User from './user.model.js';
 import Question from './question.model.js';
 import Option from './option.model.js';
@@ -28,6 +28,11 @@ QuizType.belongsTo(Quiz, { foreignKey: 'quiz_id' })
 Quiz.hasOne(Area, { foreignKey: 'quiz_id' })
 Area.belongsTo(Quiz, { foreignKey: 'quiz_id' })
 
+Quiz.hasOne(QuizScore, { foreignKey: 'quiz_id' })
+QuizScore.belongsTo(Quiz, { foreignKey: 'quiz_id' })
+User.hasMany(QuizScore, { foreignKey: 'user_id' })
+QuizScore.belongsTo(User, { foreignKey: 'user_id' })
+
 export default {
     sequelize,
     Quiz,
@@ -37,4 +42,5 @@ export default {
     Result,
     QuizType,
     Area,
+    QuizScore,
 }

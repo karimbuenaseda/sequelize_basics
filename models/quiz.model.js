@@ -19,3 +19,11 @@ export const Quiz = sequelize.define("Quiz", {
 export const QuizType = sequelize.define("QuizType", {
     name: DataTypes.STRING,
 })
+
+export const QuizScore = sequelize.define("QuizScore", {
+    score: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        defaultValue: 0
+    }
+})
