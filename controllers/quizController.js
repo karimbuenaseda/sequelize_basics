@@ -1,16 +1,24 @@
 import models from '../models/index.js';
 import { checkItemExists } from '../utils/queryHelpers.js';
-const { Quiz } = models;
+const { Quiz, Area } = models;
 
 export const createQuiz = async (req, res, next) => {
     try {
         
-        const { title, description } = req.body;
+        const { title, description, areaName } = req.body;
         const user = req.user; 
         if (!checkItemExists(title, res, 'Title is required')) {
             return;
         }
-        await Quiz.create({ title, description, user_id: user.user_id });
+        const quiz = await Quiz.create({ title, description, user_id: user.user_id });
+
+        // Optionally, you can also create an Area entry for the quiz if needed
+        await Area.create({
+            name: areaName || 'General',
+            quiz_id: quiz.id,
+
+        })
+
         res.status(200).json({ message: 'Quiz created successfully!' });
     }catch (error) {
         console.error('Error creating quiz:', error);
@@ -77,3 +85,30 @@ export const updateQuiz = async (req, res, next) => {
         res.status(500).json({ message: `Error updating quiz: ${error.message}` });
     }
 }
+
+export const getQuizArea = async (req, res, next) => {
+    try {
+        const quizId = req.params.quizId;
+
+        if(quizId){
+            if(!checkItemExists(quizId, res, 'Quiz not found')) {
+                return;
+            }
+
+            const area = await Area.findAll({
+                where: { quiz_id: quizId }
+            })
+
+            res.status(200).json(area);
+
+        }else{
+            const areas = await Area.findAll();
+            res.status(200).json(areas);
+        }
+
+    }catch (error) {
+        console.error('Error fetching quiz area:', error);
+        res.status(500).json({ message: `Error fetching quiz area: ${error.message}` });
+    }
+}
+
