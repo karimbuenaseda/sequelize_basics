@@ -1,0 +1,213 @@
+{
+  "users": [
+    { "user_id": 1, "user_name": "admin_user", "email": "admin@example.com", "password": "adminpassword123", "role": "admin" },
+    { "user_id": 2, "user_name": "creator_user", "email": "creator@example.com", "password": "creatorpassword123", "role": "creator" },
+    { "user_id": 3, "user_name": "regular_user", "email": "user@example.com", "password": "userpassword123", "role": "user" },
+    { "user_id": 4, "user_name": "jane_doe", "email": "jane@example.com", "password": "janepassword123", "role": "creator" },
+    { "user_id": 5, "user_name": "john_smith", "email": "john@example.com", "password": "johnpassword123", "role": "user" }
+  ],
+  "quizzes": [
+    {
+      "id": 1,
+      "title": "JavaScript Basics",
+      "description": "A quiz about the fundamentals of JavaScript",
+      "number_of_questions": 4,
+      "user_id": 2,
+      "quizType": { "id": 1, "name": "Multiple Choice", "quiz_id": 1 },
+      "area": { "id": 1, "name": "Programming", "quiz_id": 1 },
+      "questions": [
+        {
+          "id": 1, "text": "What is the output of typeof null in JavaScript?", "isActive": true, "quiz_id": 1,
+          "options": [
+            { "id": 1, "text": "null", "isCorrect": false, "isActive": true, "question_id": 1 },
+            { "id": 2, "text": "object", "isCorrect": true, "isActive": true, "question_id": 1 },
+            { "id": 3, "text": "undefined", "isCorrect": false, "isActive": true, "question_id": 1 },
+            { "id": 4, "text": "string", "isCorrect": false, "isActive": true, "question_id": 1 }
+          ]
+        },
+        {
+          "id": 2, "text": "Which keyword is used to declare a block-scoped variable?", "isActive": true, "quiz_id": 1,
+          "options": [
+            { "id": 5, "text": "var", "isCorrect": false, "isActive": true, "question_id": 2 },
+            { "id": 6, "text": "let", "isCorrect": true, "isActive": true, "question_id": 2 },
+            { "id": 7, "text": "define", "isCorrect": false, "isActive": true, "question_id": 2 },
+            { "id": 8, "text": "static", "isCorrect": false, "isActive": true, "question_id": 2 }
+          ]
+        },
+        {
+          "id": 3, "text": "Which method is used to parse a JSON string in JavaScript?", "isActive": true, "quiz_id": 1,
+          "options": [
+            { "id": 9, "text": "JSON.parse()", "isCorrect": true, "isActive": true, "question_id": 3 },
+            { "id": 10, "text": "JSON.stringify()", "isCorrect": false, "isActive": true, "question_id": 3 },
+            { "id": 11, "text": "JSON.convert()", "isCorrect": false, "isActive": true, "question_id": 3 },
+            { "id": 12, "text": "JSON.read()", "isCorrect": false, "isActive": true, "question_id": 3 }
+          ]
+        },
+        {
+          "id": 4, "text": "What does the '===' operator do in JavaScript?", "isActive": true, "quiz_id": 1,
+          "options": [
+            { "id": 13, "text": "Compares value only", "isCorrect": false, "isActive": true, "question_id": 4 },
+            { "id": 14, "text": "Compares value and type", "isCorrect": true, "isActive": true, "question_id": 4 },
+            { "id": 15, "text": "Assigns a value", "isCorrect": false, "isActive": true, "question_id": 4 },
+            { "id": 16, "text": "Compares type only", "isCorrect": false, "isActive": true, "question_id": 4 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "World Geography",
+      "description": "Test your knowledge about world geography",
+      "number_of_questions": 4,
+      "user_id": 2,
+      "quizType": { "id": 2, "name": "Multiple Choice", "quiz_id": 2 },
+      "area": { "id": 2, "name": "Geography", "quiz_id": 2 },
+      "questions": [
+        {
+          "id": 5, "text": "What is the capital of France?", "isActive": true, "quiz_id": 2,
+          "options": [
+            { "id": 17, "text": "London", "isCorrect": false, "isActive": true, "question_id": 5 },
+            { "id": 18, "text": "Berlin", "isCorrect": false, "isActive": true, "question_id": 5 },
+            { "id": 19, "text": "Paris", "isCorrect": true, "isActive": true, "question_id": 5 },
+            { "id": 20, "text": "Madrid", "isCorrect": false, "isActive": true, "question_id": 5 }
+          ]
+        },
+        {
+          "id": 6, "text": "Which is the largest ocean on Earth?", "isActive": true, "quiz_id": 2,
+          "options": [
+            { "id": 21, "text": "Atlantic Ocean", "isCorrect": false, "isActive": true, "question_id": 6 },
+            { "id": 22, "text": "Indian Ocean", "isCorrect": false, "isActive": true, "question_id": 6 },
+            { "id": 23, "text": "Arctic Ocean", "isCorrect": false, "isActive": true, "question_id": 6 },
+            { "id": 24, "text": "Pacific Ocean", "isCorrect": true, "isActive": true, "question_id": 6 }
+          ]
+        },
+        {
+          "id": 7, "text": "Which country has the largest population in the world?", "isActive": true, "quiz_id": 2,
+          "options": [
+            { "id": 25, "text": "India", "isCorrect": true, "isActive": true, "question_id": 7 },
+            { "id": 26, "text": "USA", "isCorrect": false, "isActive": true, "question_id": 7 },
+            { "id": 27, "text": "China", "isCorrect": false, "isActive": true, "question_id": 7 },
+            { "id": 28, "text": "Brazil", "isCorrect": false, "isActive": true, "question_id": 7 }
+          ]
+        },
+        {
+          "id": 8, "text": "What is the longest river in the world?", "isActive": true, "quiz_id": 2,
+          "options": [
+            { "id": 29, "text": "Amazon", "isCorrect": false, "isActive": true, "question_id": 8 },
+            { "id": 30, "text": "Nile", "isCorrect": true, "isActive": true, "question_id": 8 },
+            { "id": 31, "text": "Yangtze", "isCorrect": false, "isActive": true, "question_id": 8 },
+            { "id": 32, "text": "Mississippi", "isCorrect": false, "isActive": true, "question_id": 8 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "General Science",
+      "description": "A quiz about basic science concepts",
+      "number_of_questions": 4,
+      "user_id": 4,
+      "quizType": { "id": 3, "name": "Multiple Choice", "quiz_id": 3 },
+      "area": { "id": 3, "name": "Science", "quiz_id": 3 },
+      "questions": [
+        {
+          "id": 9, "text": "What is the chemical symbol for water?", "isActive": true, "quiz_id": 3,
+          "options": [
+            { "id": 33, "text": "H2O", "isCorrect": true, "isActive": true, "question_id": 9 },
+            { "id": 34, "text": "CO2", "isCorrect": false, "isActive": true, "question_id": 9 },
+            { "id": 35, "text": "O2", "isCorrect": false, "isActive": true, "question_id": 9 },
+            { "id": 36, "text": "NaCl", "isCorrect": false, "isActive": true, "question_id": 9 }
+          ]
+        },
+        {
+          "id": 10, "text": "What planet is known as the Red Planet?", "isActive": true, "quiz_id": 3,
+          "options": [
+            { "id": 37, "text": "Venus", "isCorrect": false, "isActive": true, "question_id": 10 },
+            { "id": 38, "text": "Jupiter", "isCorrect": false, "isActive": true, "question_id": 10 },
+            { "id": 39, "text": "Mars", "isCorrect": true, "isActive": true, "question_id": 10 },
+            { "id": 40, "text": "Saturn", "isCorrect": false, "isActive": true, "question_id": 10 }
+          ]
+        },
+        {
+          "id": 11, "text": "What is the powerhouse of the cell?", "isActive": true, "quiz_id": 3,
+          "options": [
+            { "id": 41, "text": "Nucleus", "isCorrect": false, "isActive": true, "question_id": 11 },
+            { "id": 42, "text": "Mitochondria", "isCorrect": true, "isActive": true, "question_id": 11 },
+            { "id": 43, "text": "Ribosome", "isCorrect": false, "isActive": true, "question_id": 11 },
+            { "id": 44, "text": "Golgi Apparatus", "isCorrect": false, "isActive": true, "question_id": 11 }
+          ]
+        },
+        {
+          "id": 12, "text": "What is the speed of light?", "isActive": true, "quiz_id": 3,
+          "options": [
+            { "id": 45, "text": "300,000 km/s", "isCorrect": true, "isActive": true, "question_id": 12 },
+            { "id": 46, "text": "150,000 km/s", "isCorrect": false, "isActive": true, "question_id": 12 },
+            { "id": 47, "text": "450,000 km/s", "isCorrect": false, "isActive": true, "question_id": 12 },
+            { "id": 48, "text": "100,000 km/s", "isCorrect": false, "isActive": true, "question_id": 12 }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "World History",
+      "description": "Test your knowledge about major historical events",
+      "number_of_questions": 4,
+      "user_id": 4,
+      "quizType": { "id": 4, "name": "Multiple Choice", "quiz_id": 4 },
+      "area": { "id": 4, "name": "History", "quiz_id": 4 },
+      "questions": [
+        {
+          "id": 13, "text": "In which year did World War II end?", "isActive": true, "quiz_id": 4,
+          "options": [
+            { "id": 49, "text": "1943", "isCorrect": false, "isActive": true, "question_id": 13 },
+            { "id": 50, "text": "1944", "isCorrect": false, "isActive": true, "question_id": 13 },
+            { "id": 51, "text": "1945", "isCorrect": true, "isActive": true, "question_id": 13 },
+            { "id": 52, "text": "1946", "isCorrect": false, "isActive": true, "question_id": 13 }
+          ]
+        },
+        {
+          "id": 14, "text": "Who was the first President of the United States?", "isActive": true, "quiz_id": 4,
+          "options": [
+            { "id": 53, "text": "Abraham Lincoln", "isCorrect": false, "isActive": true, "question_id": 14 },
+            { "id": 54, "text": "George Washington", "isCorrect": true, "isActive": true, "question_id": 14 },
+            { "id": 55, "text": "Thomas Jefferson", "isCorrect": false, "isActive": true, "question_id": 14 },
+            { "id": 56, "text": "John Adams", "isCorrect": false, "isActive": true, "question_id": 14 }
+          ]
+        },
+        {
+          "id": 15, "text": "Which ancient wonder was located in Alexandria?", "isActive": true, "quiz_id": 4,
+          "options": [
+            { "id": 57, "text": "The Colossus of Rhodes", "isCorrect": false, "isActive": true, "question_id": 15 },
+            { "id": 58, "text": "The Lighthouse of Alexandria", "isCorrect": true, "isActive": true, "question_id": 15 },
+            { "id": 59, "text": "The Hanging Gardens", "isCorrect": false, "isActive": true, "question_id": 15 },
+            { "id": 60, "text": "The Statue of Zeus", "isCorrect": false, "isActive": true, "question_id": 15 }
+          ]
+        },
+        {
+          "id": 16, "text": "In which year did the Berlin Wall fall?", "isActive": true, "quiz_id": 4,
+          "options": [
+            { "id": 61, "text": "1987", "isCorrect": false, "isActive": true, "question_id": 16 },
+            { "id": 62, "text": "1988", "isCorrect": false, "isActive": true, "question_id": 16 },
+            { "id": 63, "text": "1989", "isCorrect": true, "isActive": true, "question_id": 16 },
+            { "id": 64, "text": "1990", "isCorrect": false, "isActive": true, "question_id": 16 }
+          ]
+        }
+      ]
+    }
+  ],
+  "results": [
+    { "id": 1, "score": 3, "user_id": 3, "quiz_id": 1 },
+    { "id": 2, "score": 2, "user_id": 3, "quiz_id": 2 },
+    { "id": 3, "score": 4, "user_id": 5, "quiz_id": 1 },
+    { "id": 4, "score": 3, "user_id": 5, "quiz_id": 3 },
+    { "id": 5, "score": 2, "user_id": 3, "quiz_id": 4 }
+  ],
+  "quizScores": [
+    { "id": 1, "score": 3, "user_id": 3, "quiz_id": 1 },
+    { "id": 2, "score": 2, "user_id": 3, "quiz_id": 2 },
+    { "id": 3, "score": 4, "user_id": 5, "quiz_id": 1 },
+    { "id": 4, "score": 3, "user_id": 5, "quiz_id": 3 },
+    { "id": 5, "score": 2, "user_id": 3, "quiz_id": 4 }
+  ]
+}

@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node --watch --env-file=.env app"
+    "start": "node --watch --env-file=.env app",
+    "seed": "node --env-file=.env data/seeder.js"
   },
   "keywords": [],
   "author": "",
